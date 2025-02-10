@@ -3,9 +3,9 @@
 1. Download ollama
 https://ollama.com/download
 
-2. Set up ollama
+2. Comeplete ollama set-up
 
-3. Use prompt(eg.Anaconda Prompt) to download Deepseek and Llama3
+3. Use prompt(eg.Anaconda Prompt) to download Deepseek and Llama3 as per below:
   * `ollama run deepseek-r1:7b`
   * `ollama run deepseek-llm:7b`
   * `ollama run llama3.1:8b`
