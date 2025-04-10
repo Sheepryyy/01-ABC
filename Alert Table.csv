@@ -1,0 +1,11 @@
+Alert ID,Detection ID,Alert Date,Customer ID,Rule Name,Alerted Transactions per Detection,False Positive / True Positive,Alert Narrative
+A-1,A-1-1,45566,C-1,Cash Structuring $10k,"T-1, T-2, T-3, T-4, T-5, T-6, T-7",True Positive,No reasonable explanation for customer activity. Customer not in cash intensive business. No declared nexus with KY.
+A-1,A-1-2,45566,C-1,Cash Structuring $10k,"T-7, T-8, T-9, T-10, T-11, T-12",True Positive,No reasonable explanation for customer activity. Customer not in cash intensive business. No declared nexus with KY.
+A-1,A-1-3,45566,C-1,Rapid Movements of Funds,"T-1, T-2, T-3, T-4, T-5, T-6, T-7, T-8, T-9, T-10, T-11, T-12, T-13",True Positive,No reasonable explanation for customer activity. Customer not in cash intensive business. No declared nexus with KY.
+A-1,A-1-4,45566,C-1,Large Wire to High Risk Jursidiction,T-13,True Positive,No reasonable explanation for customer activity. Customer not in cash intensive business. No declared nexus with KY.
+A-2,A-2-1,45566,C-2,Concentration Account,"T-14, T-15, T-16, T-17, T-20",True Positive,No reasonable explanation for customer activity. Round dollar transaction unusual in normal course of business.
+A-2,A-2-2,45566,C-2,Rapid Movement of Funds,"T-14, T-15, T-16, T-17, T-20, T-21",True Positive,No reasonable explanation for customer activity. Round dollar transaction unusual in normal course of business.
+A-3,A-3-1,45566,C-3,New Account Rule,"T-22, T-23,  T-29",False Positive,Customer explains he worked as a dealer for a Las Vegas gambling tournament and earned more than expected in tips. Funds sent to HK where the customer resides.
+A-3,A-3-2,45566,C-3,Cash Structuring $10k,"T-22, T-23",False Positive,Customer explains he worked as a dealer for a Las Vegas gambling tournament and earned more than expected in tips. Funds sent to HK where the customer resides.
+A-5,A-5-1,45566,C-4,Large Wire to High Risk Jursidiction,"T-30, T-31, T-32, T-33",True Positive,A-5-1: No reasonable explanation for moving funds. Round dollar transactions. A-5-2: Expected activity of customer and expected country of business.
+A-5,A-5-2,45566,C-4,Large Wire to High Risk Jursidiction,T-34,False Positive,A-5-1: No reasonable explanation for moving funds. Round dollar transactions. A-5-2: Expected activity of customer and expected country of business.
