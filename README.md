@@ -45,6 +45,7 @@ This project automates the generation of Suspicious Activity Reports (SARs) for 
 - Construct dynamic prompts using information retrieved from both:
   - SQL queries (for entity information)
   - FAISS (for similar SAR examples)
+- The initial draft of the prompt was created with help from ChatGPT, and iteratively refined based on project needs.
 
 ### 🔗 2.4 Query Functions: Building Prompt Variables
 
@@ -59,8 +60,16 @@ This project automates the generation of Suspicious Activity Reports (SARs) for 
 
 ### 🤖 2.5 LLM Set Up
 
-- Use AWS configure to link AWS bedrock(Access Key ID, Secret Access Key and Region)
-- AWS Bedrock models (e.g., Deepseek R1 70B, LLaMA 3.3 70B)
+- Set up AWS credentials (Access Key ID, Secret Access Key, and Region) via aws configure
+- Connect to AWS Bedrock using boto3 with the bedrock-runtime client in region us-east-1.
+- Construct the request payload, including:
+  - prompt: filled template with placeholders resolved
+  - temperature: 0.6
+  - top_p: 0.9
+  - max_gen_len: 2048
+-  Supported models:
+  - LLaMA 3 70B → us.meta.llama3-3-70b-instruct-v1:0
+  - Deepseek R1 70B → us.deepseek.r1-v1:0
 
 ---
 
@@ -70,12 +79,23 @@ This project automates the generation of Suspicious Activity Reports (SARs) for 
 - For each of the available SAR Alert Narratives, output will be provided from two models, Llama 3.3 and DeepSeek R-1, on 3 three different temperature (0.3, 0.6, 0.9) settings.
 - This will allow us to then guage which temperature is ideal per model and by using the newly created grading rubric we will be able to asses with model performs best.
 
-### 📝 Alert Narrative 1
+### 📝 SAR Narrative 1
 
-### 📝 Alert Narrative 2
+### 📝 SAR Narrative 2
 
-### 📝 Alert Narrative 3
+### 📝 SAR Narrative 3
 
-## Hi Rui
+---
+
+## 🧪 Alternatives Tried but Not Adopted
+- We explored several other approaches before settling on the current AWS Bedrock-based solution:
+- **Local LLM via Ollama**: Initially attempted to run LLaMA models locally using Ollama. However:
+  - High memory requirement (70B model needs ≥20GB VRAM)
+  - Smaller models performed poorly in generating quality SAR narratives
+- **AWS EC2 + Bedrock (Direct Invocation without aws configure)**: Running inference via an EC2 instance had some advantages (no manual credential config needed), but was eventually rejected due to:
+  - Long startup times each time the instance was rebooted
+  - Higher cost for keeping instances alive during development
+  - Operational complexity for a student project
+- We ultimately chose to call Bedrock APIs from Google Colab, which balanced simplicity, speed, and flexibility.
 
 ---
