@@ -19,6 +19,7 @@ This project automates the generation of Suspicious Activity Reports (SARs) for 
 
 ### 📌 2.1 Database Creation
 
+- Before create the datebase, you need to uplod 4 csv files
 - PostgreSQL schema with 4 tables: `Customer`, `Account`, `Transaction`, `Alert`
 ![image](https://github.com/user-attachments/assets/0f0130bd-5da1-4e63-88a5-61b771e5c9cf)
 - Use `psycopg2` to set up the connection to PostgreSQL
@@ -28,7 +29,7 @@ This project automates the generation of Suspicious Activity Reports (SARs) for 
 
 ### 🔍 2.2 RAG Setup: Alert Narratives and Guidelines (Section 4)
 
-- Load 3 fake SAR narratives and a guidelines document from `.docx` files:
+- Load 3 fake SAR narratives and a guidelines document from `.docx` files(need to upload):
   - `A-1 Alert Narrative.docx`
   - `A-2 Fake Alert Narrative Fixed.docx`
   - `A-5 Fake Alert Narrative.docx`
